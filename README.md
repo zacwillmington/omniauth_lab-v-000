@@ -12,7 +12,9 @@ Let's implement all the knowledge we've just gained about OAuth and Omniauth. In
 
 Our app will have one page with a "Login with Facebook" link on it. When the user clicks the link, they'll be asked to authorize our app's access to certain details from their Facebook account. Upon acceptance, our app will use the retrieved data to either locate an existing user account or create a new one, and the user will then be logged in to our app.
 
-There is already a view that outputs all the authenticaton data and displays the user's photo if one is provided.
+There is already a view that outputs all the authentication data and displays the user's photo if one is provided.
+
+As of March 2018, Facebook now requires secure (https) app urls. If you would like to test your App's functionality in the browser, you will need to do so running 'thin'. Use: `thin start --ssl` instead of `rails s` when testing in the browser. Note: your browser, (Chrome, for instance), may display a security warning that you are not accessing a secure sight (in the end we are just faking an https url to satisfy Facebook). Feel free to bypass that warning and continue on to your site. 
 
 ## Resources
   * [Omniauth](https://github.com/intridea/omniauth)
