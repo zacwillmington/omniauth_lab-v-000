@@ -6,12 +6,13 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = create_or_find_by(:uid => auth['info']['uid'])
+        binding.pry
+        @user = User.find_or_create_by(:uid => auth['info']['uid'])
         binding.pry
     end
 
     private
-    
+
     def auth
       request.env['omniauth.auth']
     end
