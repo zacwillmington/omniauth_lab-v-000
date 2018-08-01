@@ -6,9 +6,8 @@ class SessionsController < ApplicationController
     end
 
     def create
-        binding.pry
         @user = create_or_find_by(:uid => auth['info']['uid'])
-        
+        binding.pry
     end
 
     def auth
